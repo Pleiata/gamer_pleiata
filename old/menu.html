@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menü</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="menu.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black; /* Fekete háttér */
+        }
+        .menu-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: black; /* Menü háttér */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            width: 60px; /* Méret a logóhoz */
+            height: 60px;
+            border-radius: 50%; /* Kör alak */
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        .logo img {
+            width: 100%; /* Kép ránagyítása */
+            height: auto;
+        }
+        .menu-buttons {
+            display: flex;
+            gap: 15px; /* Gombok közötti távolság */
+        }
+        .menu-button {
+            color: #00aaff; /* Kék szín a gomboknak */
+            text-decoration: none; /* Aláhúzás eltüntetése */
+            padding: 10px 15px; /* Gombok padding */
+            border: 2px solid transparent; /* Határ */
+            border-radius: 5px; /* Gombok lekerekítése */
+            transition: border-color 0.3s;
+        }
+        .menu-button:hover {
+            border-color: #00aaff; /* Hover effekt */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <div class="logo">
+            <img src="gamer_pleiata.png" alt="Logo">
+        </div>
+        <div class="menu-buttons">
+            <a href="index.html" class="menu-button">Kezdőlap</a>
+            <a href="ismerteto.html" class="menu-button">Ismertető</a>
+            <a href="pc_konfigok.html" class="menu-button">PC konfigok</a>
+        </div>
+    </div>
+
+</body>
+</html>

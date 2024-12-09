@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameR_Pleiata Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Menü megjelenése */
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+
+        /* Bal oldali szekció: Kép és zene lejátszó */
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .left-section img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .left-section img:hover {
+            transform: scale(1.1);
+        }
+
+        .left-section audio {
+            margin-left: 20px;
+        }
+
+        .left-section h3 {
+            color: #325ea8;
+            font-size: 20px;
+        }
+
+        /* Jobb oldali szekció: Menü gombok */
+        .menu-button {
+            background: none;
+            border: 2px solid #325ea8;
+            color: #325ea8;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .menu-button:hover {
+            color: black;
+            background-color: #325ea8;
+            box-shadow: 0 0 10px #325ea8, 0 0 20px #325ea8;
+        }
+
+        /* Menü gombok egy sorban */
+        .right-section {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <!-- Bal oldali szekció: Kép és zene lejátszó -->
+        <div class="left-section">
+            <img src="gamer_pleiata.png" alt="GameR_Pleiata">
+            <h3>GameR_Pleiata Website</h3>
+            <audio controls autoplay loop>
+                <source src="Night_Cruiser.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- Jobb oldali szekció: Menü gombok -->
+        <div class="right-section">
+            <a href="kezdolap.html" class="menu-button" target="main-content">Kezdőlap</a>
+            <a href="ismerteto.html" class="menu-button" target="main-content">Ismertető</a>
+            <a href="pc_konfigok.html" class="menu-button" target="main-content">PC Konfiguráció</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -3,126 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Konfigok - GameR_Pleiata Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PC Konfigurációk</title>
     <style>
         body {
-            background-color: black; /* Fekete háttér */
-            color: white; /* Fehér szöveg */
-            font-family: 'Arial', sans-serif; /* Betűtípus */
-            margin: 0; /* Margók eltüntetése */
-            padding: 0; /* Padding eltüntetése */
-        }
-        header {
-            display: flex; /* Flexbox a fejlécben */
-            align-items: center; /* Kép és gombok középre igazítása */
-            justify-content: space-between; /* Jobbra-balra igazítás */
-            background: black; /* Menü háttér */
-            padding: 10px; /* Padding a menüben */
-            position: fixed; /* Fix menü */
-            width: 100%; /* Szélesség 100% */
-            top: 0; /* Felső pozicionálás */
-            z-index: 1000; /* Z-index, hogy a tartalom felett legyen */
-        }
-        .logo {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
             display: flex;
-            align-items: center; /* Kép és szöveg középre igazítása */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
-        .logo img {
-            width: 90px; /* Kép szélessége */
-            height: 90px; /* Kép magassága */
-            border-radius: 50%; /* Kör alakú */
-            object-fit: cover; /* Kép arányának megtartása */
-            margin-right: 10px; /* Jobb oldali margó */
-            transform: scale(1.1); /* Kép ránagyítása */
+
+        .navbar {
+            width: 100%;
+            padding: 10px 0;
+            background: black;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        .site-title {
-            font-size: 24px; /* Cím mérete */
-            color: #00aaff; /* Kék szín */
-            text-shadow: 0 0 5px rgba(0, 170, 255, 0.7), 0 0 10px rgba(0, 170, 255, 0.5); /* Sci-fi hatás */
+
+        .navbar a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #325ea8;
+            color: white;
+            background: #000;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #325ea8, inset 0 0 5px #325ea8;
         }
-        .menu-buttons {
-            display: flex; /* Flexbox a gombokhoz */
-            gap: 10px; /* Közötti távolság */
+
+        .navbar a:hover {
+            color: #325ea8;
+            background: black;
+            box-shadow: 0 0 15px #00f, inset 0 0 10px #325ea8;
         }
-        .menu-button {
-            color: #00aaff; /* Kék szín a gomboknak */
-            text-decoration: none; /* Aláhúzás eltüntetése */
-            font-weight: bold; /* Félkövér betű */
-            padding: 10px; /* Padding a gomboknak */
-            border-radius: 5px; /* Lekerekített sarkok */
-            transition: background-color 0.3s, box-shadow 0.3s; /* Átmenet a háttérszínhez és árnyékhoz */
-            background-color: transparent; /* Alap háttérszín */
-            border: 2px solid transparent; /* Alapértelmezett keret */
+
+        .config-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            width: 90%;
+            max-width: 1800px;
         }
-        .menu-button:hover {
-            background-color: rgba(0, 170, 255, 0.3); /* Hover háttérszín */
-            box-shadow: 0 0 10px rgba(0, 170, 255, 1); /* Hover árnyék */
+
+        .config {
+            text-align: center;
+            flex: 1;
+            padding: 20px;
+            border: 2px solid #325ea8;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #325ea8;
+            background: linear-gradient(145deg, #222 0%, #000 100%);
         }
-        .container {
-            margin-top: 120px; /* Felső margó a menü miatt */
-            padding: 20px; /* Padding a tartalom körül */
+
+        .config img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 0 15px #325ea8;
+            transition: transform 0.3s ease;
         }
-        .pc-config {
-            background-color: #1c1c1c; /* Világosabb fekete sáv */
-            padding: 20px; /* Padding a sáv körül */
-            border-radius: 10px; /* Lekerekített sarkok */
-            box-shadow: 0 0 15px rgba(0, 170, 255, 0.7); /* Kék neon hatás */
-            margin: 20px 0; /* Felső és alsó margó */
+
+        .config img:hover {
+            transform: scale(1.1);
         }
-        .pc-title {
-            color: #00aaff; /* Kék szín */
-            font-size: 20px; /* Cím mérete */
-            margin-bottom: 10px; /* Alsó margó */
-            text-shadow: 0 0 5px rgba(0, 170, 255, 0.7), 0 0 10px rgba(0, 170, 255, 0.5); /* Sci-fi hatás */
+
+        .config h2 {
+            color: #325ea8;
+            font-size: 24px;
+            margin: 10px 0;
+            text-shadow: 0 0 5px #325ea8, 0 0 10px #325ea8;
         }
-        .pc-item {
-            margin: 5px 0; /* Felső és alsó margó */
+
+        .config ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .config ul li {
+            margin-bottom: 5px;
+        }
+
+        .spark {
+            width: 5px;
+            height: 300px;
+            background: linear-gradient(180deg, #325ea8 0%, #00f 50%, #325ea8 100%);
+            animation: spark-animation 1s infinite alternate ease-in-out;
+            border-radius: 5px;
+            box-shadow: 0 0 20px #325ea8;
+        }
+
+        @keyframes spark-animation {
+            0% { transform: translateY(-10px); opacity: 0.8; }
+            100% { transform: translateY(10px); opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="gamer_pleiata.png" alt="Logo">
-            <span class="site-title">GameR_Pleiata Website</span>
-        </div>
-        <div class="menu-buttons">
-            <a href="index.html" class="menu-button">Kezdőlap</a>
-            <a href="ismerteto.html" class="menu-button">Ismertető</a>
-            <a href="pc_konfigok.html" class="menu-button">PC konfigok</a>
-        </div>
-    </header>
 
-    <div class="container">
-        <div class="pc-config">
-            <h1 class="pc-title">GameR_Pleiata PC Config</h1>
-            <div class="pc-item">House: <strong>THERMALTAKE Core W200</strong></div>
-            <div class="pc-item">House Fans: <strong>BE QUIET! Silent Wings 3 140mm PWM High Speed</strong></div>
-            <div class="pc-item">PSU: <strong>CORSAIR TX Series Modular TX850M Gold 850W</strong></div>
-            <div class="pc-item">Motherboard: <strong>ASRock Z370 Taichi</strong></div>
-            <div class="pc-item">CPU: <strong>Intel Core I7-8700K BX80684178700K</strong></div>
-            <div class="pc-item">CPU cooler: <strong>Be quiet! Dark Rock Pro 4 BK022</strong></div>
-            <div class="pc-item">Memory: <strong>CORSAIR 2X8GB DDR4 2666MHZ VENGEANCE LPX BLACK cmk16gx4m2a2666c16</strong></div>
-            <div class="pc-item">Videocard: <strong>ASUS GTX 1080 Ti 11GB GDDR5X ROG STRIX</strong></div>
-            <div class="pc-item">SSD1 (System): <strong>WESTERN DIGITAL 256GB BLACK WDS256G1X0C M.2 PCIE SSD</strong></div>
-            <div class="pc-item">Monitor: <strong>Asus MG279Q black</strong></div>
+
+    <h1>PC Konfigurációk</h1>
+
+    <!-- Konfigurációk -->
+    <div class="config-container">
+        <!-- GameR_Pleiata Config -->
+        <div class="config">
+            <img src="gamer_pleiata.jpg" alt="GameR_Pleiata">
+            <h2>GameR_Pleiata PC config</h2>
+            <ul>
+                <li><strong>House:</strong> THERMALTAKE Core W200</li>
+                <li><strong>House Fans:</strong> BE QUIET! Silent Wings 3 140mm PWM High Speed</li>
+                <li><strong>PSU:</strong> CORSAIR TX Series Modular TX850M Gold 850W</li>
+                <li><strong>Motherboard:</strong> ASRock Z370 Taichi</li>
+                <li><strong>CPU:</strong> Intel Core I7-8700K BX80684178700K</li>
+                <li><strong>CPU cooler:</strong> Be quiet! Dark Rock Pro 4 BK022</li>
+                <li><strong>Memory:</strong> CORSAIR 2X8GB DDR4 2666MHZ VENGEANCE LPX BLACK</li>
+                <li><strong>Videocard:</strong> ASUS GTX 1080 Ti 11GB GDDR5X ROG STRIX</li>
+                <li><strong>SSD1(System):</strong> WESTERN DIGITAL 256GB BLACK M.2 PCIE SSD</li>
+                <li><strong>Monitor:</strong> Asus MG279Q black</li>
+            </ul>
         </div>
 
-        <div class="pc-config">
-            <h1 class="pc-title">Sanchez_CommandR PC Config</h1>
-            <div class="pc-item">House: <strong>THERMALTAKE Core W200</strong></div>
-            <div class="pc-item">House Fans: <strong>BE QUIET! Silent Wings 3 140mm PWM High Speed</strong></div>
-            <div class="pc-item">PSU: <strong>THERMALTAKE 550W LONDON W0492RE (GOLD)</strong></div>
-            <div class="pc-item">Motherboard: <strong>Asrock Z390M PRO4</strong></div>
-            <div class="pc-item">CPU: <strong>Intel Core i7-8700 CM8068403358316 OEM</strong></div>
-            <div class="pc-item">CPU Cooler: <strong>Be quiet! Dark Rock Pro 4 BK022</strong></div>
-            <div class="pc-item">Memory: <strong>2x Kingston HyperX Fury Black 8GB DDR4 2666MHz HX426C16FB2/8</strong></div>
-            <div class="pc-item">Videocard: <strong>Asus GTX1060 6GB GDDR5 Phoenix PH-GTX1060-6G</strong></div>
-            <div class="pc-item">SSD1 (System): <strong>Western Digital 1TB Blue 3D WDS100T2B0B M.2 SSD</strong></div>
-            <div class="pc-item">SSD2 (Game): <strong>WD 250GB Blue SATA 3 2.5" WDS250G2B0A</strong></div>
-            <div class="pc-item">Monitor: <strong>ASUS 27" VX279H</strong></div>
+        <!-- Szikrázás -->
+        <div class="spark"></div>
+
+        <!-- Sanchez_CommandR Config -->
+        <div class="config">
+            <img src="sanchez_commandr.jpg" alt="Sanchez_CommandR">
+            <h2>Sanchez_CommandR PC config</h2>
+            <ul>
+                <li><strong>House:</strong> THERMALTAKE Core W200</li>
+                <li><strong>House Fans:</strong> BE QUIET! Silent Wings 3 140mm PWM High Speed</li>
+                <li><strong>PSU:</strong> THERMALTAKE 550W LONDON W0492RE (GOLD)</li>
+                <li><strong>Motherboard:</strong> Asrock Z390M PRO4</li>
+                <li><strong>CPU:</strong> Intel Core i7-8700 OEM</li>
+                <li><strong>CPU Cooler:</strong> Be quiet! Dark Rock Pro 4 BK022</li>
+                <li><strong>Memory:</strong> 2x Kingston HyperX Fury Black 8GB DDR4 2666MHz</li>
+                <li><strong>Videocard:</strong> Asus GTX1060 6GB GDDR5 Phoenix</li>
+                <li><strong>SSD1(System):</strong> Western Digital 1TB Blue 3D M.2 SSD</li>
+                <li><strong>SSD2(Game):</strong> WD 250GB Blue SATA 3 2.5"</li>
+                <li><strong>Monitor:</strong> ASUS 27" VX279H</li>
+            </ul>
         </div>
     </div>
 

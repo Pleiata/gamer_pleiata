@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kezdőlap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00ccff;
+            margin-top: 20px;
+        }
+
+        .game-title {
+            background-color: #222;
+            color: #00ccff;
+            padding: 10px;
+            text-align: left;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 300px;
+            text-align: center;
+            border: 5px solid transparent;
+            border-image: linear-gradient(45deg, #00ccff, #325ea8) 1;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #111;
+        }
+
+        .container iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+        .video-details {
+            margin-top: 10px;
+        }
+
+        .video-details p {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kezdőlap</h1>
+
+    <!-- GTA V Online -->
+    <div>
+        <div class="game-title">GTA V Online</div>
+        <div id="gta-v-videos-container" class="video-container">
+            <!-- JavaScript ide tölti be a videókat -->
+        </div>
+    </div>
+
+    <!-- NFS Heat -->
+    <div>
+        <div class="game-title">NFS Heat</div>
+        <div id="nfs-heat-videos-container" class="video-container">
+            <!-- JavaScript ide tölti be a videókat -->
+        </div>
+    </div>
+
+    <!-- Tom Clancy's The Division 2 -->
+    <div>
+        <div class="game-title">Tom Clancy's The Division 2</div>
+        <div id="division-2-videos-container" class="video-container">
+            <!-- JavaScript ide tölti be a videókat -->
+        </div>
+    </div>
+
+    <!-- Warface -->
+    <div>
+        <div class="game-title">Warface</div>
+        <div id="warface-videos-container" class="video-container">
+            <!-- JavaScript ide tölti be a videókat -->
+        </div>
+    </div>
+
+    <!-- JavaScript Hivatkozások -->
+    <script src="videos/gta_v.js"></script>
+    <script src="videos/nfs_heat.js"></script>
+    <script src="videos/division_2.js"></script>
+    <script src="videos/warface.js"></script>
+</body>
+</html>

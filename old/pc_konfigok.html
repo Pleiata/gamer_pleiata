@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Konfigok - GameR_Pleiata Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black; /* Fekete háttér */
+            color: white; /* Fehér szöveg */
+            font-family: 'Arial', sans-serif; /* Betűtípus */
+            margin: 0; /* Margók eltüntetése */
+            padding: 0; /* Padding eltüntetése */
+        }
+        header {
+            display: flex; /* Flexbox a fejlécben */
+            align-items: center; /* Kép és gombok középre igazítása */
+            justify-content: space-between; /* Jobbra-balra igazítás */
+            background: black; /* Menü háttér */
+            padding: 10px; /* Padding a menüben */
+            position: fixed; /* Fix menü */
+            width: 100%; /* Szélesség 100% */
+            top: 0; /* Felső pozicionálás */
+            z-index: 1000; /* Z-index, hogy a tartalom felett legyen */
+        }
+        .logo {
+            display: flex;
+            align-items: center; /* Kép és szöveg középre igazítása */
+        }
+        .logo img {
+            width: 90px; /* Kép szélessége */
+            height: 90px; /* Kép magassága */
+            border-radius: 50%; /* Kör alakú */
+            object-fit: cover; /* Kép arányának megtartása */
+            margin-right: 10px; /* Jobb oldali margó */
+            transform: scale(1.1); /* Kép ránagyítása */
+        }
+        .site-title {
+            font-size: 24px; /* Cím mérete */
+            color: #00aaff; /* Kék szín */
+            text-shadow: 0 0 5px rgba(0, 170, 255, 0.7), 0 0 10px rgba(0, 170, 255, 0.5); /* Sci-fi hatás */
+        }
+        .menu-buttons {
+            display: flex; /* Flexbox a gombokhoz */
+            gap: 10px; /* Közötti távolság */
+        }
+        .menu-button {
+            color: #00aaff; /* Kék szín a gomboknak */
+            text-decoration: none; /* Aláhúzás eltüntetése */
+            font-weight: bold; /* Félkövér betű */
+            padding: 10px; /* Padding a gomboknak */
+            border-radius: 5px; /* Lekerekített sarkok */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Átmenet a háttérszínhez és árnyékhoz */
+            background-color: transparent; /* Alap háttérszín */
+            border: 2px solid transparent; /* Alapértelmezett keret */
+        }
+        .menu-button:hover {
+            background-color: rgba(0, 170, 255, 0.3); /* Hover háttérszín */
+            box-shadow: 0 0 10px rgba(0, 170, 255, 1); /* Hover árnyék */
+        }
+        .container {
+            margin-top: 120px; /* Felső margó a menü miatt */
+            padding: 20px; /* Padding a tartalom körül */
+        }
+        .pc-config {
+            background-color: #1c1c1c; /* Világosabb fekete sáv */
+            padding: 20px; /* Padding a sáv körül */
+            border-radius: 10px; /* Lekerekített sarkok */
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.7); /* Kék neon hatás */
+            margin: 20px 0; /* Felső és alsó margó */
+        }
+        .pc-title {
+            color: #00aaff; /* Kék szín */
+            font-size: 20px; /* Cím mérete */
+            margin-bottom: 10px; /* Alsó margó */
+            text-shadow: 0 0 5px rgba(0, 170, 255, 0.7), 0 0 10px rgba(0, 170, 255, 0.5); /* Sci-fi hatás */
+        }
+        .pc-item {
+            margin: 5px 0; /* Felső és alsó margó */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="gamer_pleiata.png" alt="Logo">
+            <span class="site-title">GameR_Pleiata Website</span>
+        </div>
+        <div class="menu-buttons">
+            <a href="index.html" class="menu-button">Kezdőlap</a>
+            <a href="ismerteto.html" class="menu-button">Ismertető</a>
+            <a href="pc_konfigok.html" class="menu-button">PC konfigok</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="pc-config">
+            <h1 class="pc-title">GameR_Pleiata PC Config</h1>
+            <div class="pc-item">House: <strong>THERMALTAKE Core W200</strong></div>
+            <div class="pc-item">House Fans: <strong>BE QUIET! Silent Wings 3 140mm PWM High Speed</strong></div>
+            <div class="pc-item">PSU: <strong>CORSAIR TX Series Modular TX850M Gold 850W</strong></div>
+            <div class="pc-item">Motherboard: <strong>ASRock Z370 Taichi</strong></div>
+            <div class="pc-item">CPU: <strong>Intel Core I7-8700K BX80684178700K</strong></div>
+            <div class="pc-item">CPU cooler: <strong>Be quiet! Dark Rock Pro 4 BK022</strong></div>
+            <div class="pc-item">Memory: <strong>CORSAIR 2X8GB DDR4 2666MHZ VENGEANCE LPX BLACK cmk16gx4m2a2666c16</strong></div>
+            <div class="pc-item">Videocard: <strong>ASUS GTX 1080 Ti 11GB GDDR5X ROG STRIX</strong></div>
+            <div class="pc-item">SSD1 (System): <strong>WESTERN DIGITAL 256GB BLACK WDS256G1X0C M.2 PCIE SSD</strong></div>
+            <div class="pc-item">Monitor: <strong>Asus MG279Q black</strong></div>
+        </div>
+
+        <div class="pc-config">
+            <h1 class="pc-title">Sanchez_CommandR PC Config</h1>
+            <div class="pc-item">House: <strong>THERMALTAKE Core W200</strong></div>
+            <div class="pc-item">House Fans: <strong>BE QUIET! Silent Wings 3 140mm PWM High Speed</strong></div>
+            <div class="pc-item">PSU: <strong>THERMALTAKE 550W LONDON W0492RE (GOLD)</strong></div>
+            <div class="pc-item">Motherboard: <strong>Asrock Z390M PRO4</strong></div>
+            <div class="pc-item">CPU: <strong>Intel Core i7-8700 CM8068403358316 OEM</strong></div>
+            <div class="pc-item">CPU Cooler: <strong>Be quiet! Dark Rock Pro 4 BK022</strong></div>
+            <div class="pc-item">Memory: <strong>2x Kingston HyperX Fury Black 8GB DDR4 2666MHz HX426C16FB2/8</strong></div>
+            <div class="pc-item">Videocard: <strong>Asus GTX1060 6GB GDDR5 Phoenix PH-GTX1060-6G</strong></div>
+            <div class="pc-item">SSD1 (System): <strong>Western Digital 1TB Blue 3D WDS100T2B0B M.2 SSD</strong></div>
+            <div class="pc-item">SSD2 (Game): <strong>WD 250GB Blue SATA 3 2.5" WDS250G2B0A</strong></div>
+            <div class="pc-item">Monitor: <strong>ASUS 27" VX279H</strong></div>
+        </div>
+    </div>
+
+</body>
+</html>

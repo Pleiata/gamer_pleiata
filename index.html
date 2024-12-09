@@ -1,198 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameR_Pleiata Website</title>
     <style>
-        /* Alap oldalstílus */
         body {
-            margin: 0;
-            background-color: #000;
-            color: #325EA8;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Header és menü */
-        header {
-            background-color: #000;
-            padding: 10px;
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-            box-shadow: 0 0 15px #325EA8;
+            width: 100%; /* Központozás és reszponzivitás */
+            padding: 10px 0;
+            position: relative;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            color: #325EA8;
-            font-size: 24px;
-        }
-
-        .logo img {
+        .header img {
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .header img:hover {
+            transform: scale(1.1);
+        }
+
+        .header .title {
+            color: #325ea8;
+            font-size: 24px;
+            text-shadow: 0 0 5px #325ea8, 0 0 10px #325ea8;
+            animation: ufo-glow 3s infinite alternate ease-in-out;
+        }
+
+        .header audio {
+            margin-left: 40px;
         }
 
         .menu {
             display: flex;
             gap: 15px;
+            margin-left: auto;
         }
 
         .menu a {
-            color: #325EA8;
+            color: #325ea8;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: bold;
             padding: 10px 20px;
+            border: 2px solid transparent;
             border-radius: 5px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .menu a:hover {
-            color: #FFF;
-            box-shadow: 0 0 8px #325EA8, 0 0 15px #325EA8;
+            border-color: #325ea8;
+            box-shadow: 0 0 15px #325ea8;
+            background-color: #222;
         }
 
-        /* Középső képek */
-        .profile-section {
-            text-align: center;
-            margin-top: 100px;
+        iframe {
+            width: 96%; /* Reszponzív szélesség */
+            border: none;
+            margin-top: 60px;
         }
 
-        .profile-section img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 20px;
-        }
-
-        .profile-name {
-            color: #325EA8;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        /* Video szekció */
-        .videos-container {
-            margin-top: 50px;
-            padding: 20px;
-        }
-
-        .game-container {
-            background-color: #111;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            color: #325EA8;
-            box-shadow: 0 0 15px rgba(50, 94, 168, 0.5); /* Neon hatás */
-        }
-
-        .game-title {
-            font-size: 24px;
-            color: #325EA8;
-            margin-bottom: 15px;
-        }
-
-        /* Flex layout for videos to align side by side */
-        #division-2-videos-container, #gta-v-videos-container, #nfs-heat-videos-container, #warface-videos-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px; /* Distance between videos */
-        }
-
-        .container {
-            width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .video iframe {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #325EA8; /* Neon border */
-        }
-
-        .video-details {
-            color: #325EA8;
-            font-size: 14px;
-            text-align: center;
-            margin-top: 5px;
+        @keyframes ufo-glow {
+            0% { text-shadow: 0 0 5px #325ea8, 0 0 15px #325ea8; }
+            100% { text-shadow: 0 0 20px #32e1f3, 0 0 40px #32e1f3; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">
-        <img src="gamer_pleiata.png" alt="Logo">
-        <span>GameR_Pleiata Website</span>
-    </div>
-    <nav class="menu">
-        <a href="index.html">Kezdőlap</a>
-        <a href="ismerteto.html">Ismertető</a>
-        <a href="pc_konfigok.html">PC Konfiguráció</a>
-    </nav>
-</header>
-
-<div class="profile-section">
-    <img src="gamer_pleiata.jpg" alt="GameR_Pleiata">
-    <img src="sanchez_commandr.jpg" alt="Sanchez_CommandR">
-    <div>
-        <span class="profile-name">GameR_Pleiata</span>
-        <span class="profile-name">Sanchez_CommandR</span>
-    </div>
-</div>
-
-<div class="videos-container">
-
-    <!-- GTA V Online videók -->
-    <div class="game-container">
-        <h2 class="game-title">GTA V Online</h2>
-        <div id="gta-v-videos-container">
-            <!-- Videók betöltése a gta_v.js-ből -->
+    <div class="header">
+        <img src="gamer_pleiata.png" alt="GameR_Pleiata">
+        <div class="title">GameR_Pleiata Website</div>
+        <audio controls autoplay loop>
+            <source src="Night_Cruiser.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <div class="menu">
+            <a href="kezdolap.html" target="content-frame">Kezdőlap</a>
+            <a href="ismerteto.html" target="content-frame">Ismertető</a>
+            <a href="pc_konfigok.html" target="content-frame">PC Konfiguráció</a>
         </div>
     </div>
 
-    <!-- NFS Heat videók -->
-    <div class="game-container">
-        <h2 class="game-title">NFS Heat</h2>
-        <div id="nfs-heat-videos-container">
-            <!-- Videók betöltése a nfs_heat.js-ből -->
-        </div>
-    </div>
+    <iframe name="content-frame" src="kezdolap.html" style="overflow: hidden;" onload="resizeIframe(this)"></iframe>
 
-    <!-- Tom Clancy's The Division 2 videók -->
-    <div class="game-container">
-        <h2 class="game-title">Tom Clancy's The Division 2</h2>
-        <div id="division-2-videos-container">
-            <!-- Videók betöltése a division_2.js-ből -->
-        </div>
-    </div>
-
-    <!-- Warface videók -->
-    <div class="game-container">
-        <h2 class="game-title">Warface</h2>
-        <div id="warface-videos-container">
-            <!-- Videók betöltése a warface.js-ből -->
-        </div>
-    </div>
-
-</div>
-
-<script src="videos/gta_v.js"></script>
-<script src="videos/nfs_heat.js"></script>
-<script src="videos/division_2.js"></script>
-<script src="videos/warface.js"></script>
+    <script>
+        // Az iframe magasságát automatikusan igazítja a tartalomhoz
+        function resizeIframe(iframe) {
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        }
+    </script>
 
 </body>
 </html>
